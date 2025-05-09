@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ardore Perfume - Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #000000, #050505);
+            color: white;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            opacity: 0.8;
+            animation: slow-zoom 30s alternate infinite ease-in-out;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, #000000, rgba(0,0,0,0.8), transparent);
+        }
+
+        .gold-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(232, 182, 0, 0.1);
+            mix-blend-mode: overlay;
+        }
+
+        .diagonal-lines {
+            position: absolute;
+            inset: 0;
+            opacity: 0.15;
+            background-image: repeating-linear-gradient(45deg, #e8b600 0, #e8b600 1px, transparent 1px, transparent 20px);
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 300;
+            color: #e8b600;
+            margin-bottom: 1.5rem;
+            animation: fade-in-up 1s forwards ease-out;
+        }
+
+        .divider {
+            width: 6rem;
+            height: 2px;
+            background-color: rgba(232, 182, 0, 0.5);
+            margin: 0 auto 2rem;
+        }
+
+        p {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            color: #d1d1d1;
+            margin-bottom: 3rem;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fade-in-up 1s forwards ease-out;
+            animation-delay: 0.2s;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            animation: fade-in-up 1s forwards ease-out;
+            animation-delay: 0.4s;
+        }
+
+        .social-links a {
+            color: rgba(232, 182, 0, 0.8);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e8b600;
+            transform: scale(1.1) translateY(-4px);
+        }
+
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slow-zoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="background">
+            <img src="https://public.readdy.ai/ai/img_res/731db9a2972a79abc44a1e1e28b80367.jpg" alt="Luxury Perfume">
+            <div class="overlay"></div>
+            <div class="gold-overlay"></div>
+            <div class="diagonal-lines"></div>
+        </div>
+
+        <div class="content">
+            <h1>Coming Soon</h1>
+            <div class="divider"></div>
+            <p>We're crafting something extraordinary. Stay tuned for our upcoming collection.</p>
+            
+            <div class="social-links">
+                <a href="#facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#pinterest"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

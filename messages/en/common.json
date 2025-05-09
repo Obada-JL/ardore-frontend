@@ -1,0 +1,354 @@
+{
+    "navbar": {
+        "collections": "Collections",
+        "fragrances": "Fragrances",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Discover Your",
+        "subtitle": "Exquisite fragrances crafted with precision and passion for the discerning individual.",
+        "button": "Explore Collection",
+        "scroll": "Scroll to discover"
+    },
+    "collections": {
+        "title": "Premium Collections",
+        "description": "Our signature collections are meticulously crafted to evoke emotions and memories, creating an unforgettable olfactory experience.",
+        "viewAll": "View All Collections",
+        "products": {
+            "midnightSerenade": {
+                "name": "Midnight Serenade",
+                "price": "$195",
+                "description": "A captivating nocturnal blend with notes of black orchid and amber"
+            },
+            "goldenElixir": {
+                "name": "Golden Elixir",
+                "price": "$210",
+                "description": "Luxurious warmth with saffron, honey, and precious woods"
+            },
+            "velvetNoir": {
+                "name": "Velvet Noir",
+                "price": "$180",
+                "description": "Intensely seductive with rich vanilla, oud, and black pepper"
+            }
+        }
+    },
+    "fragrances": {
+        "title": "The",
+        "highlightedTitle": "Olfactory",
+        "description": "Discover the intricate layers of our fragrances, carefully composed to create a harmonious sensory experience.",
+        "essence": "ESSENCE",
+        "topNotes": {
+            "title": "TOP NOTES",
+            "subtitle": "First Impression",
+            "description": "The initial impression of our fragrance opens with vibrant citrus, bergamot, and crisp apple, creating an invigorating and refreshing introduction."
+        },
+        "middleNotes": {
+            "title": "MIDDLE NOTES",
+            "subtitle": "Heart of the Fragrance",
+            "description": "The heart reveals a sophisticated blend of jasmine, rose, and violet, intertwined with subtle spicy accords of cinnamon and cardamom."
+        },
+        "baseNotes": {
+            "title": "BASE NOTES",
+            "subtitle": "Lasting Impression",
+            "description": "The lingering foundation consists of warm amber, rich vanilla, and exotic sandalwood, providing depth and longevity to the olfactory experience."
+        }
+    },
+    "categories": {
+        "title": "Curated",
+        "highlightedTitle": "Categories",
+        "description": "Explore our distinct fragrance families, each crafted to evoke specific moods and experiences.",
+        "items": {
+            "floral": {
+                "name": "Floral",
+                "description": "Elegant and timeless"
+            },
+            "oriental": {
+                "name": "Oriental",
+                "description": "Rich and exotic"
+            },
+            "woody": {
+                "name": "Woody",
+                "description": "Deep and sophisticated"
+            },
+            "fresh": {
+                "name": "Fresh",
+                "description": "Invigorating and crisp"
+            },
+            "gourmand": {
+                "name": "Gourmand",
+                "description": "Sweet and indulgent"
+            },
+            "aquatic": {
+                "name": "Aquatic",
+                "description": "Serene and refreshing"
+            }
+        }
+    },
+    "contact": {
+        "title": "Stay",
+        "highlightedTitle": "Connected",
+        "description": "Have questions about our products or need assistance? Feel free to reach out to us using the form below.",
+        "form": {
+            "namePlaceholder": "Your name",
+            "emailPlaceholder": "Your email address",
+            "subjectPlaceholder": "Subject",
+            "messagePlaceholder": "Your message",
+            "sendButton": "Send Message"
+        },
+        "visit": {
+            "title": "Visit Us",
+            "line1": "123 Luxury Avenue",
+            "line2": "New York, NY 10001"
+        },
+        "email": {
+            "title": "Email Us",
+            "line1": "info@ardoreperfume.com",
+            "line2": "support@ardoreperfume.com"
+        },
+        "call": {
+            "title": "Call Us",
+            "line1": "+1 (800) 123-4567",
+            "line2": "Mon-Fri: 9am-6pm EST"
+        }
+    },
+    "olfactoryJourney": {
+        "title": "The Olfactory Journey",
+        "description": "Discover the intricate layers of our fragrances, carefully composed to create a harmonious sensory experience.",
+        "topNotes": "Top Notes",
+        "middleNotes": "Middle Notes",
+        "baseNotes": "Base Notes",
+        "firstImpression": "First Impression",
+        "heartOfFragrance": "Heart of the Fragrance",
+        "lastingImpression": "Lasting Impression",
+        "topNotesDescription": "The initial impression of our fragrance opens with vibrant citrus, bergamot, and crisp apple, creating an invigorating and refreshing introduction.",
+        "middleNotesDescription": "The heart reveals a sophisticated blend of jasmine, rose, and violet, intertwined with subtle spicy accords of cinnamon and cardamom.",
+        "baseNotesDescription": "The lingering foundation consists of warm amber, rich vanilla, and exotic sandalwood, providing depth and longevity to the olfactory experience."
+    },
+    "footer": {
+        "description": "Crafting exquisite fragrances for the discerning individual since 2010. Each scent tells a unique story.",
+        "quickLinks": "Quick Links",
+        "customerService": "Customer Service",
+        "openingHours": "Opening Hours",
+        "links": {
+            "home": "Home",
+            "aboutUs": "About Us",
+            "collections": "Collections",
+            "fragrances": "Fragrances",
+            "contact": "Contact",
+            "faq": "FAQ",
+            "shippingReturns": "Shipping & Returns",
+            "privacyPolicy": "Privacy Policy",
+            "termsConditions": "Terms & Conditions",
+            "trackOrder": "Track Order"
+        },
+        "hours": {
+            "mondayFriday": "Monday - Friday:",
+            "saturday": "Saturday:",
+            "sunday": "Sunday:",
+            "mondayFridayHours": "9am - 8pm",
+            "saturdayHours": "10am - 6pm",
+            "sundayHours": "11am - 5pm"
+        },
+        "copyright": "© {year} ARDORE Perfume. All rights reserved.",
+        "tagline": "Designed with for the fragrance connoisseur"
+    },
+    "common": {
+        "new": "NEW",
+        "direction": "ltr"
+    },
+    "productDetails": {
+        "addToCart": "Add to Cart",
+        "overview": "Overview",
+        "notes": "Notes",
+        "ingredients": "Ingredients",
+        "reviews": "Reviews",
+        "essenceOfLuxury": "The Essence of Luxury",
+        "youMayAlsoLike": "You May Also Like",
+        "topNotes": "Top Notes",
+        "heartNotes": "Heart Notes",
+        "baseNotes": "Base Notes",
+        "ourCommitment": "Our Commitment",
+        "customerReviews": "Customer Reviews",
+        "basedOn": "Based on {count} reviews",
+        "writeReview": "Write a Review",
+        "helpful": "Helpful ({count})",
+        "report": "Report",
+        "loadMore": "Load More Reviews"
+    },
+    "perfume": {
+        "heroAlt": "Luxury Perfume",
+        "title": "Midnight Elixir",
+        "subtitle": "A captivating blend of mystery and elegance",
+        "price": "$289.00",
+        "volume": "100ml Eau de Parfum",
+        "addToCart": "Add to Cart",
+        "tabs": {
+            "overview": "Overview",
+            "notes": "Notes",
+            "ingredients": "Ingredients",
+            "reviews": "Reviews"
+        },
+        "overview": {
+            "title": "The Essence of Luxury",
+            "paragraph1": "Midnight Elixir is a sophisticated fragrance that embodies the essence of luxury and mystery. Created by master perfumer Claire Dubois, this exquisite scent captures the allure of a moonlit garden with notes of rare black orchid, amber, and sandalwood.",
+            "paragraph2": "Each bottle is meticulously crafted from the finest materials, featuring a hand-polished obsidian cap and gold-etched glass. The result is not just a fragrance, but a work of art that elevates any collection.",
+            "imageAlt": "Midnight Elixir Perfume",
+            "imageAlt2": "Midnight Elixir Bottle Close-up",
+            "imageAlt3": "Midnight Elixir Presentation Box",
+            "bottleSize": "Select Bottle Size",
+            "badges": {
+                "sustainable": "Sustainably Sourced",
+                "crueltyFree": "Cruelty Free"
+            },
+            "details": {
+                "longevity": "Longevity",
+                "longevityValue": "8-10 hours",
+                "sillage": "Sillage",
+                "sillageValue": "Moderate to strong",
+                "season": "Season",
+                "seasonValue": "Fall / Winter",
+                "occasion": "Occasion",
+                "occasionValue": "Evening / Special events"
+            }
+        },
+        "notes": {
+            "title": "Fragrance Notes",
+            "description": "Experience the evolution of Midnight Elixir as it unfolds on your skin, revealing a complex harmony of rare and precious ingredients carefully selected to create a signature scent.",
+            "topNotes": "Top Notes",
+            "heartNotes": "Heart Notes",
+            "baseNotes": "Base Notes",
+            "radarChartTitle": "Fragrance Profile",
+            "fragranceProfile": "Midnight Elixir",
+            "chartDescription": "The radar chart illustrates the intensity and presence of key notes in Midnight Elixir, showing how different elements come together to create the fragrance's unique profile.",
+            "fragranceEvolution": "Fragrance Evolution Timeline",
+            "timeline": {
+                "0-15min": "First 15 Minutes",
+                "15-45min": "15-45 Minutes",
+                "45+min": "45+ Minutes",
+                "opening": "Opening Phase",
+                "heart": "Heart Phase",
+                "base": "Base Phase",
+                "openingDesc": "The fragrance opens with vibrant citrus and spicy notes. Bergamot, black pepper, and cardamom create an energetic and refreshing first impression.",
+                "heartDesc": "As the opening notes settle, the heart of the fragrance reveals itself with luxurious floral elements. Black orchid, jasmine, and iris blend together in perfect harmony.",
+                "baseDesc": "In the final phase, the warm base notes of amber, sandalwood, and vanilla emerge to create a long-lasting, elegant drydown that lingers on the skin."
+            },
+            "items": {
+                "blackPepper": "Black Pepper",
+                "bergamot": "Bergamot",
+                "cardamom": "Cardamom",
+                "saffron": "Saffron",
+                "blackOrchid": "Black Orchid",
+                "jasmine": "Jasmine",
+                "iris": "Iris",
+                "roseAbsolute": "Rose Absolute",
+                "amber": "Amber",
+                "sandalwood": "Sandalwood",
+                "vanilla": "Vanilla",
+                "musk": "Musk"
+            }
+        },
+        "ingredients": {
+            "title": "Ingredients",
+            "description": "Our fragrances combine the finest natural ingredients with innovative synthetic molecules to create a balanced and long-lasting scent profile.",
+            "natural": "Natural Ingredients",
+            "synthetic": "Synthetic Compounds",
+            "composition": "Composition Breakdown",
+            "composition": {
+                "floral": "Floral Elements",
+                "woody": "Woody Elements",
+                "spicy": "Spicy Elements",
+                "citrus": "Citrus Elements",
+                "musk": "Musk Elements"
+            },
+            "sustainability": {
+                "title": "Sustainable Sourcing",
+                "description": "We maintain direct relationships with growers to ensure fair trade practices and environmental responsibility in our supply chain.",
+                "imgAlt": "Sustainable ingredient farming"
+            },
+            "ethical": {
+                "title": "Ethical Practices",
+                "description": "Our formulations are 100% cruelty-free and we use eco-friendly processes to minimize our environmental footprint.",
+                "imgAlt": "Ethical laboratory practices"
+            },
+            "items": {
+                "bergamot": "Bergamot Essential Oil (Citrus bergamia)",
+                "jasmine": "Jasmine Absolute (Jasminum grandiflorum)",
+                "sandalwood": "Mysore Sandalwood (Santalum album)",
+                "vanilla": "Bourbon Vanilla Extract (Vanilla planifolia)",
+                "amber": "Labdanum Resin (Cistus ladaniferus)",
+                "musk": "Ambrette Seed Oil (Hibiscus abelmoschus)",
+                "ambroxan": "Ambroxan (Ambergris alternative)",
+                "galaxolide": "Galaxolide (Clean musk aroma)",
+                "hedione": "Hedione (Jasmine enhancer)",
+                "iso": "Iso E Super (Woody, amber note)",
+                "linalool": "Linalool (Floral, spicy note)",
+                "coumarin": "Coumarin (Sweet, hay-like note)"
+            },
+            "disclaimer": {
+                "title": "Product Information",
+                "text": "Ingredients are subject to change at the manufacturer's discretion. For the most complete and up-to-date list of ingredients, please refer to the product packaging."
+            }
+        },
+        "reviews": {
+            "title": "Customer Reviews",
+            "description": "Read what our customers have to say about their experience with Midnight Elixir.",
+            "writeReview": "Write a Review",
+            "basedOn": "Based on {count} reviews",
+            "verifiedPurchase": "Verified Purchase",
+            "helpful": "Helpful ({count})",
+            "report": "Report",
+            "filters": {
+                "all": "All Reviews",
+                "positive": "Positive",
+                "critical": "Critical",
+                "recent": "Most Recent"
+            },
+            "reviewers": {
+                "john": "John D.",
+                "sophia": "Sophia L.",
+                "michael": "Michael T.",
+                "emma": "Emma W."
+            },
+            "comments": {
+                "johnReview": "This fragrance is absolutely extraordinary. It has the perfect balance of mystery and sophistication. The longevity is impressive - I can still detect it on my skin at the end of the day.",
+                "sophiaReview": "Midnight Elixir has become my signature scent. I receive compliments every time I wear it. The black orchid note is particularly enchanting.",
+                "michaelReview": "A very luxurious fragrance with excellent sillage. My only critique is that I wish it projected a bit more in the final hours, but the scent itself is magnificent.",
+                "emmaReview": "Worth every penny. The bottle design is as exquisite as the fragrance itself. It evolves beautifully throughout the day, revealing different facets as time passes."
+            }
+        },
+        "related": {
+            "title": "You May Also Like",
+            "description": "Explore other exquisite fragrances from our premium collection.",
+            "products": {
+                "midnight": {
+                    "name": "Midnight Serenade",
+                    "description": "A captivating nocturnal blend with notes of black orchid and amber",
+                    "price": "$195.00"
+                },
+                "golden": {
+                    "name": "Golden Elixir",
+                    "description": "Luxurious warmth with saffron, honey, and precious woods",
+                    "price": "$210.00"
+                },
+                "velvet": {
+                    "name": "Velvet Noir",
+                    "description": "Intensely seductive with rich vanilla, oud, and black pepper",
+                    "price": "$180.00"
+                }
+            }
+        },
+        "subscription": {
+            "title": "Stay",
+            "highlightedTitle": "Inspired",
+            "description": "Subscribe to our newsletter for exclusive offers, fragrance insights, and early access to new releases.",
+            "emailPlaceholder": "Your email address",
+            "button": "Subscribe",
+            "privacyNotice": "By subscribing, you agree to our Privacy Policy. We respect your privacy and will never share your information."
+        }
+    },
+    "Favorites": {
+        "title": "Favorites",
+        "empty": "No favorites yet"
+    }
+}
