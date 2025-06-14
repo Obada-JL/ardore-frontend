@@ -13,6 +13,7 @@
     },
     "collections": {
         "title": "Premium Collections",
+        "highlightedTitle": "Collections",
         "description": "Our signature collections are meticulously crafted to evoke emotions and memories, creating an unforgettable olfactory experience.",
         "viewAll": "View All Collections",
         "products": {

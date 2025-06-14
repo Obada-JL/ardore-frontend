@@ -58,30 +58,22 @@ async function getMessages(locale) {
 }
 
 export default async function LocaleLayout({ children, params }) {
-  // Extract locale safely from params, might be undefined during build
-  const locale = params?.locale || 'en';
+  // Await params before accessing its properties
+  const resolvedParams = await params;
+  const locale = resolvedParams?.locale || 'en';
   const messages = await getMessages(locale);
   
   if (!messages) {
     notFound();
   }
 
-  const direction = locale === 'ar' ? 'rtl' : 'ltr';
-
   return (
-    <html lang={locale} dir={direction} className="vsc-initialized">
-      <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${notoSansArabic.variable} antialiased vsc-initialized`}
-      >
-        <NextIntlClientProvider locale={locale} messages={messages}>
+    <div className={`${notoSansArabic.variable}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+      <NextIntlClientProvider locale={locale} messages={messages}>
         <Navbar />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+        {children}
+        <Footer />
+      </NextIntlClientProvider>
+    </div>
   );
 } 

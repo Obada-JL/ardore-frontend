@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 
 export default function Navbar() {
-    const t = useTranslations('Navbar');
+    const t = useTranslations('navbar');
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
