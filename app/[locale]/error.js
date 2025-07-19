@@ -22,7 +22,7 @@ export default function Error({ error, reset }) {
             Try again
           </button>
           <Link
-            href="/en"
+            href="/"
             className="px-6 py-3 border border-[#e8b600] text-[#e8b600] hover:bg-[#e8b600] hover:text-black transition-colors duration-300"
           >
             Go to homepage

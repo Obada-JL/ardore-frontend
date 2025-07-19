@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import { Noto_Sans_Arabic } from "next/font/google";
 import path from 'path';
 import { promises as fs } from 'fs';
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
 import Footer from "./components/Footer";
+import { AuthProvider } from "../context/AuthContext";
+import { OrderProvider } from "../context/OrderContext";
+import { FavoritesProvider } from "../context/FavoritesContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,28 +34,25 @@ export const metadata = {
 };
 
 async function getMessages(locale) {
-  // Handle undefined locale case
-  const safeLocale = locale || 'en';
-  
   try {
-    const messagesPath = path.join(process.cwd(), 'messages', safeLocale, 'common.json');
-    const messagesJSON = await fs.readFile(messagesPath, 'utf8');
-    return JSON.parse(messagesJSON);
+    const messageFile = path.join(process.cwd(), 'messages', `${locale}`, 'common.json');
+    const messages = await fs.readFile(messageFile, 'utf-8');
+    return JSON.parse(messages);
   } catch (error) {
-    console.error(`Error loading messages for locale ${safeLocale}:`, error);
+    console.error(`Error loading messages for locale ${locale}:`, error);
     
-    // Try fallback to English if we weren't already trying to load English
-    if (safeLocale !== 'en') {
+    // Fallback to Turkish if the requested locale is not available
+    if (locale !== 'tr') {
       try {
-        const fallbackPath = path.join(process.cwd(), 'messages', 'en', 'common.json');
-        const fallbackJSON = await fs.readFile(fallbackPath, 'utf8');
-        return JSON.parse(fallbackJSON);
+        const fallbackFile = path.join(process.cwd(), 'messages', 'tr', 'common.json');
+        const fallbackMessages = await fs.readFile(fallbackFile, 'utf-8');
+        return JSON.parse(fallbackMessages);
       } catch (fallbackError) {
-        console.error('Failed to load fallback messages:', fallbackError);
+        console.error('Error loading fallback messages:', fallbackError);
+        return null;
       }
     }
     
-    // Return null to trigger notFound in the worst case
     return null;
   }
 }
@@ -60,7 +60,7 @@ async function getMessages(locale) {
 export default async function LocaleLayout({ children, params }) {
   // Await params before accessing its properties
   const resolvedParams = await params;
-  const locale = resolvedParams?.locale || 'en';
+  const locale = resolvedParams?.locale || 'tr';
   const messages = await getMessages(locale);
   
   if (!messages) {
@@ -70,9 +70,15 @@ export default async function LocaleLayout({ children, params }) {
   return (
     <div className={`${notoSansArabic.variable}`} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <FavoritesProvider>
+            <OrderProvider>
+              <Navbar />
+              {children}
+              <Footer />
+            </OrderProvider>
+          </FavoritesProvider>
+        </AuthProvider>
       </NextIntlClientProvider>
     </div>
   );

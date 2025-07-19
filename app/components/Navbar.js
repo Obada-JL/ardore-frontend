@@ -2,21 +2,42 @@
 import Logo from "../../public/header_logo.png"
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { Heart, Globe } from 'lucide-react';
+import { Heart, Globe, LogIn, UserPlus, ShoppingBag } from 'lucide-react';
 import FavoritesSidebar from './FavoritesSidebar';
+import CartSidebar from './CartSidebar';
+import AuthModal from './AuthModal';
+import UserMenu from './UserMenu';
+import { useAuth } from '../context/AuthContext';
+import { useOrder } from '../context/OrderContext';
+import { useFavorites } from '../context/FavoritesContext';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
+import Link from "next/link";
 
 export default function Navbar() {
     const t = useTranslations('Navbar');
+    const nav = useTranslations('navbar');
+    const { isAuthenticated, isLoading } = useAuth();
+    const { cartCount } = useOrder();
+    const { favoritesCount } = useFavorites();
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isFavoritesOpen, setIsFavoritesOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
     const [isLangOpen, setIsLangOpen] = useState(false);
+    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+    const [authModalMode, setAuthModalMode] = useState('login');
     const router = useRouter();
     const pathname = usePathname();
     const locale = useLocale();
+
+    const navigationItems = [
+      { key: 'collections', href: '#collections' },
+      { key: 'fragrances', href: '/perfumes' },
+      { key: 'about', href: '#about' },
+      { key: 'contact', href: '#contact' }
+    ];
   
     useEffect(() => {
       const handleScroll = () => {
@@ -41,112 +62,287 @@ export default function Navbar() {
     const toggleMenu = () => {
       setIsMenuOpen(!isMenuOpen);
     };
-    
+
+    const openAuthModal = (mode) => {
+      setAuthModalMode(mode);
+      setIsAuthModalOpen(true);
+    };
+
+    const closeAuthModal = () => {
+      setIsAuthModalOpen(false);
+    };
+
     return (
-<header 
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isScrolled ? 'bg-black/90 backdrop-blur-md shadow-lg shadow-black/30' : 'bg-transparent'
-        }`}
-      >
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-[#e8b600] text-3xl font-bold tracking-widest relative">
-            <a href="/">
-            <img src={Logo.src} width={200}/>
-            </a>
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e8b600] group-hover:w-full transition-all duration-300"></span>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-10">
-            {['Collections', 'Fragrances', 'About', 'Contact'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="text-white hover:text-[#e8b600] transition-colors duration-300 relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#e8b600] group-hover:w-full transition-all duration-300"></span>
-              </a>
-            ))}
-          </nav>
-          
-          {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-[#e8b600] focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <i className={`fas ${isMenuOpen ? 'fa-times' : 'fa-bars'} text-2xl`}></i>
-          </button>
-          
-          <div className="flex items-center space-x-4">
-            {/* Language Switcher */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                className="p-2 text-white hover:text-[#e8b600] rounded-full relative cursor-pointer flex items-center"
-              >
-                <Globe size={24} />
-                <span className="ml-1 text-sm uppercase">{locale}</span>
-              </button>
-              
-              {isLangOpen && (
-                <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg overflow-hidden z-50">
-                  <div className="py-1">
-                    <button 
-                      onClick={() => switchLanguage('en')}
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'en' ? 'bg-gray-100' : ''}`}
+      <>
+        <header className={`fixed w-full top-0 z-40 transition-all duration-300 ${
+          isScrolled ? 'bg-black/95 backdrop-blur-sm border-b border-white/10' : 'bg-transparent'
+        }`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              {/* Logo */}
+              <div className="flex-shrink-0 flex items-center">
+                <Link href="/">
+                  <img
+                    className="h-8 w-auto"
+                    src={Logo.src}
+                    alt="Ardore"
+                  />
+                </Link>
+              </div>
+
+              {/* Navigation - Desktop */}
+              <div className="hidden md:flex items-center space-x-8">
+                {navigationItems.map((item) => (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    className="text-white hover:text-[#e8b600] transition-colors duration-200 text-sm font-medium"
+                  >
+                    {nav(item.key)}
+                  </a>
+                ))}
+              </div>
+
+              {/* Right Side - Desktop */}
+              <div className="hidden md:flex items-center space-x-4">
+                {/* Language Switcher */}
+                <div className="relative">
+                  <button 
+                    onClick={() => setIsLangOpen(!isLangOpen)}
+                    className="p-2 text-white hover:text-[#e8b600] rounded-full relative cursor-pointer flex items-center"
+                  >
+                    <Globe size={24} />
+                    <span className="ml-1 text-sm uppercase">{locale}</span>
+                  </button>
+                  
+                  {isLangOpen && (
+                    <div className="absolute right-0 mt-2 w-32 bg-white rounded-md shadow-lg overflow-hidden z-50">
+                      <div className="py-1">
+                        <button 
+                          onClick={() => switchLanguage('tr')}
+                          className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'tr' ? 'bg-gray-100' : ''}`}
+                        >
+                          Türkçe
+                        </button>
+                        <button 
+                          onClick={() => switchLanguage('ar')}
+                          className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'ar' ? 'bg-gray-100' : ''}`}
+                        >
+                          العربية
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Favorites */}
+                <button
+                  onClick={() => setIsFavoritesOpen(true)}
+                  className="p-2 text-white hover:text-[#e8b600] rounded-full relative cursor-pointer"
+                >
+                  <Heart size={24} />
+                  {favoritesCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {favoritesCount}
+                    </span>
+                  )}
+                </button>
+
+                {/* Cart */}
+                <button
+                  onClick={() => setIsCartOpen(true)}
+                  className="p-2 text-white hover:text-[#e8b600] rounded-full relative cursor-pointer"
+                >
+                  <ShoppingBag size={24} />
+                  {cartCount > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-[#e8b600] text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      {cartCount}
+                    </span>
+                  )}
+                </button>
+
+                {/* Authentication Section */}
+                {!isLoading && !isAuthenticated && (
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => openAuthModal('login')}
+                      className="text-white hover:text-[#e8b600] flex items-center space-x-1 transition-colors duration-200"
                     >
-                      English
+                      <LogIn size={18} />
+                      <span className="text-sm">{t('login')}</span>
                     </button>
-                    <button 
-                      onClick={() => switchLanguage('ar')}
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'ar' ? 'bg-gray-100' : ''}`}
+                    <button
+                      onClick={() => openAuthModal('register')}
+                      className="bg-[#e8b600] text-white px-4 py-2 rounded-full hover:bg-[#d4a500] transition-colors duration-200 flex items-center space-x-1"
                     >
-                      العربية
+                      <UserPlus size={18} />
+                      <span className="text-sm">{t('register')}</span>
                     </button>
                   </div>
+                )}
+
+                {/* User Menu - if authenticated */}
+                {!isLoading && isAuthenticated && (
+                  <UserMenu />
+                )}
+              </div>
+
+              {/* Mobile Menu Button */}
+              <div className="md:hidden">
+                <button
+                  onClick={toggleMenu}
+                  className="p-2 text-white hover:text-[#e8b600] transition-colors duration-200"
+                >
+                  <div className="w-6 h-6 flex flex-col justify-center items-center">
+                    <span className={`block w-6 h-0.5 bg-current transform transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}></span>
+                    <span className={`block w-6 h-0.5 bg-current mt-1 transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`block w-6 h-0.5 bg-current mt-1 transform transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}></span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <div className={`md:hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden bg-black/95 backdrop-blur-sm border-t border-white/10`}>
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Navigation Links */}
+              <div className="space-y-3">
+                {navigationItems.map((item) => (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 text-white hover:text-[#e8b600] transition-colors duration-200 text-base font-medium"
+                  >
+                    {nav(item.key)}
+                  </a>
+                ))}
+              </div>
+
+              {/* Mobile Actions Section */}
+              <div className="border-t border-white/10 pt-4">
+                <div className="flex items-center justify-between space-x-4">
+                  {/* Language Switcher */}
+                  <div className="relative">
+                    <button 
+                      onClick={() => setIsLangOpen(!isLangOpen)}
+                      className="flex items-center space-x-1 px-3 py-2 text-white hover:text-[#e8b600] rounded-lg transition-colors"
+                    >
+                      <Globe size={20} />
+                      <span className="text-sm uppercase">{locale}</span>
+                    </button>
+                    
+                    {isLangOpen && (
+                      <div className="absolute left-0 mt-2 w-32 bg-white rounded-md shadow-lg overflow-hidden z-50">
+                        <div className="py-1">
+                          <button 
+                            onClick={() => switchLanguage('tr')}
+                            className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'tr' ? 'bg-gray-100' : ''}`}
+                          >
+                            Türkçe
+                          </button>
+                          <button 
+                            onClick={() => switchLanguage('ar')}
+                            className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${locale === 'ar' ? 'bg-gray-100' : ''}`}
+                          >
+                            العربية
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Favorites */}
+                  <button
+                    onClick={() => {
+                      setIsFavoritesOpen(true);
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-1 px-3 py-2 text-white hover:text-[#e8b600] rounded-lg transition-colors relative"
+                  >
+                    <Heart size={20} />
+                    <span className="text-sm">Favorites</span>
+                    {favoritesCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                        {favoritesCount}
+                      </span>
+                    )}
+                  </button>
+
+                  {/* Cart */}
+                  <button
+                    onClick={() => {
+                      setIsCartOpen(true);
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-1 px-3 py-2 text-white hover:text-[#e8b600] rounded-lg transition-colors relative"
+                  >
+                    <ShoppingBag size={20} />
+                    <span className="text-sm">Cart</span>
+                    {cartCount > 0 && (
+                      <span className="absolute -top-1 -right-1 bg-[#e8b600] text-white text-xs rounded-full w-4 h-4 flex items-center justify-center">
+                        {cartCount}
+                      </span>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              {/* Mobile Authentication */}
+              {!isLoading && !isAuthenticated && (
+                <div className="flex flex-col space-y-3 pt-4 border-t border-[#e8b600]/30">
+                  <button
+                    onClick={() => {
+                      openAuthModal('login');
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-2 px-4 py-3 text-white hover:text-[#e8b600] rounded-lg transition-colors border border-white/20"
+                  >
+                    <LogIn size={18} />
+                    <span>{t('login')}</span>
+                  </button>
+                  <button
+                    onClick={() => {
+                      openAuthModal('register');
+                      setIsMenuOpen(false);
+                    }}
+                    className="flex items-center space-x-2 px-4 py-3 bg-[#e8b600] text-white rounded-lg hover:bg-[#d4a500] transition-colors"
+                  >
+                    <UserPlus size={18} />
+                    <span>{t('register')}</span>
+                  </button>
+                </div>
+              )}
+
+              {/* Mobile User Menu - if authenticated */}
+              {!isLoading && isAuthenticated && (
+                <div className="pt-4 border-t border-[#e8b600]/30">
+                  <UserMenu />
                 </div>
               )}
             </div>
-            
-            <button
-              onClick={() => setIsFavoritesOpen(true)}
-              className="p-2 text-white hover:text-[#e8b600] rounded-full relative cursor-pointer"
-            >
-              <Heart size={24} />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
-            </button>
           </div>
-        </div>
-        
-        {/* Mobile Menu */}
-        <div 
-          className={`md:hidden bg-black/95 overflow-hidden transition-all duration-500 ${
-            isMenuOpen ? 'max-h-64 py-4 border-b border-[#e8b600]/30' : 'max-h-0'
-          }`}
-        >
-          <div className="container mx-auto px-6">
-            {['Collections', 'Fragrances', 'About', 'Contact'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`}
-                className="block py-3 text-white hover:text-[#e8b600] transition-all duration-300 border-b border-[#e8b600]/10 pl-2 hover:pl-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
-          </div>
-        </div>
 
-        <FavoritesSidebar 
-          isOpen={isFavoritesOpen} 
-          onClose={() => setIsFavoritesOpen(false)} 
+          <FavoritesSidebar 
+            isOpen={isFavoritesOpen} 
+            onClose={() => setIsFavoritesOpen(false)} 
+          />
+          
+          <CartSidebar 
+            isOpen={isCartOpen} 
+            onClose={() => setIsCartOpen(false)} 
+          />
+        </header>
+
+        {/* Authentication Modal */}
+        <AuthModal
+          isOpen={isAuthModalOpen}
+          onClose={closeAuthModal}
+          initialMode={authModalMode}
         />
-      </header>
-
+      </>
     )
 } 

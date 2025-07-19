@@ -3,8 +3,8 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 export default getRequestConfig(async ({ locale }) => {
-    // Handle case where locale might be undefined
-    const safeLocale = locale || 'en';
+    // Handle case where locale might be undefined - default to Turkish
+    const safeLocale = locale || 'tr';
 
     try {
         // Load messages from local files instead of dynamic import
@@ -19,13 +19,13 @@ export default getRequestConfig(async ({ locale }) => {
     } catch (error) {
         console.error(`Error loading messages for locale ${safeLocale}:`, error);
 
-        // Fallback to English if there's an error and the locale wasn't already English
-        if (safeLocale !== 'en') {
+        // Fallback to Turkish if there's an error and the locale wasn't already Turkish
+        if (safeLocale !== 'tr') {
             try {
-                const fallbackPath = path.join(process.cwd(), 'messages', 'en', 'common.json');
+                const fallbackPath = path.join(process.cwd(), 'messages', 'tr', 'common.json');
                 const fallbackJSON = await fs.readFile(fallbackPath, 'utf8');
                 return {
-                    locale: 'en',
+                    locale: 'tr',
                     messages: JSON.parse(fallbackJSON)
                 };
             } catch (fallbackError) {
@@ -35,7 +35,7 @@ export default getRequestConfig(async ({ locale }) => {
 
         // Return minimal messages to avoid crashing the app
         return {
-            locale: 'en',
+            locale: 'tr',
             messages: { common: { direction: 'ltr' } }
         };
     }

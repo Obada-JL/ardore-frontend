@@ -10,10 +10,10 @@ export default function NotFound() {
         <p className="mb-6 text-gray-300">The page you are looking for does not exist or the language is not supported.</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
-            href="/en"
+            href="/tr"
             className="px-6 py-3 bg-[#e8b600] text-black hover:bg-white hover:text-[#e8b600] transition-colors duration-300"
           >
-            English Version
+            Türkçe Versiyon
           </Link>
           <Link
             href="/ar"

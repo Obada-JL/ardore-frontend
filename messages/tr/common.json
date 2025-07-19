@@ -1,0 +1,434 @@
+{
+    "navbar": {
+        "collections": "Koleksiyonlar",
+        "fragrances": "Parfümler",
+        "about": "Hakkında",
+        "contact": "İletişim"
+    },
+    "hero": {
+        "title": "Keşfedin",
+        "subtitle": "Titizlik ve tutku ile üretilmiş seçkin parfümler, ince zevk sahibi bireyler için.",
+        "button": "Koleksiyonu Keşfet",
+        "scroll": "Keşfetmek için kaydır"
+    },
+    "collections": {
+        "title": "Premium Koleksiyonlar",
+        "highlightedTitle": "Koleksiyonlar",
+        "description": "İmza koleksiyonlarımız duyguları ve anıları uyandırmak için titizlikle üretilmiş, unutulmaz bir koku deneyimi yaratıyor.",
+        "viewAll": "Tüm Koleksiyonları Görüntüle",
+        "products": {
+            "midnightSerenade": {
+                "name": "Gece Yarısı Serenadi",
+                "price": "₺5.850",
+                "description": "Siyah orkide ve amber notalarıyla büyüleyici bir gece karışımı"
+            },
+            "goldenElixir": {
+                "name": "Altın İksir",
+                "price": "₺6.300",
+                "description": "Safran, bal ve değerli ağaçlarla lüks sıcaklık"
+            },
+            "velvetNoir": {
+                "name": "Kadife Noir",
+                "price": "₺5.400",
+                "description": "Zengin vanilya, oud ve karabiber ile yoğun baştan çıkarıcılık"
+            }
+        }
+    },
+    "fragrances": {
+        "title": "Koku",
+        "highlightedTitle": "Yolculuğu",
+        "description": "Parfümlerimizin karmaşık katmanlarını keşfedin, uyumlu bir duyusal deneyim yaratmak için dikkatli bir şekilde bestelendi.",
+        "essence": "ÖNESS",
+        "topNotes": {
+            "title": "ÜST NOTALAR",
+            "subtitle": "İlk İzlenim",
+            "description": "Parfümümüzün ilk izlenimi, canlı narenciye, bergamut ve taze elma ile açılır, canlandırıcı ve ferahlatıcı bir giriş yaratır."
+        },
+        "middleNotes": {
+            "title": "ORTA NOTALAR",
+            "subtitle": "Parfümün Kalbi",
+            "description": "Kalp, yasemin, gül ve menekşenin sofistike karışımını ortaya çıkarır, tarçın ve kakule'nin ince baharatlı akorlarıyla iç içe geçer."
+        },
+        "baseNotes": {
+            "title": "ALT NOTALAR",
+            "subtitle": "Kalıcı İzlenim",
+            "description": "Kalıcı temel, sıcak amber, zengin vanilya ve egzotik sandal ağacından oluşur, koku deneyimine derinlik ve uzun ömür sağlar."
+        }
+    },
+    "categories": {
+        "title": "Özenle Seçilmiş",
+        "highlightedTitle": "Kategoriler",
+        "description": "Belirli ruh hallerini ve deneyimleri uyandırmak için üretilmiş farklı parfüm ailelerimizi keşfedin.",
+        "items": {
+            "floral": {
+                "name": "Çiçeksi",
+                "description": "Zarif ve zamansız"
+            },
+            "oriental": {
+                "name": "Oryantal",
+                "description": "Zengin ve egzotik"
+            },
+            "woody": {
+                "name": "Odunsu",
+                "description": "Derin ve sofistike"
+            },
+            "fresh": {
+                "name": "Taze",
+                "description": "Canlandırıcı ve net"
+            },
+            "gourmand": {
+                "name": "Gurme",
+                "description": "Tatlı ve şımartıcı"
+            },
+            "aquatic": {
+                "name": "Su",
+                "description": "Huzurlu ve ferahlatıcı"
+            }
+        }
+    },
+    "contact": {
+        "title": "Bağlantıda",
+        "highlightedTitle": "Kalın",
+        "description": "Ürünlerimiz hakkında sorularınız var mı veya yardıma mı ihtiyacınız var? Aşağıdaki formu kullanarak bize ulaşmaktan çekinmeyin.",
+        "form": {
+            "namePlaceholder": "Adınız",
+            "emailPlaceholder": "E-posta adresiniz",
+            "subjectPlaceholder": "Konu",
+            "messagePlaceholder": "Mesajınız",
+            "sendButton": "Mesaj Gönder"
+        },
+        "visit": {
+            "title": "Bizi Ziyaret Edin",
+            "line1": "123 Lüks Cadde",
+            "line2": "İstanbul, Türkiye"
+        },
+        "email": {
+            "title": "E-posta Gönderin",
+            "line1": "bilgi@ardoreparfum.com",
+            "line2": "destek@ardoreparfum.com"
+        },
+        "call": {
+            "title": "Bizi Arayın",
+            "line1": "+90 (212) 123-4567",
+            "line2": "Pzt-Cum: 09:00-18:00"
+        }
+    },
+    "olfactoryJourney": {
+        "title": "Koku Yolculuğu",
+        "description": "Parfümlerimizin karmaşık katmanlarını keşfedin, uyumlu bir duyusal deneyim yaratmak için dikkatli bir şekilde bestelendi.",
+        "topNotes": "Üst Notalar",
+        "middleNotes": "Orta Notalar",
+        "baseNotes": "Alt Notalar",
+        "firstImpression": "İlk İzlenim",
+        "heartOfFragrance": "Parfümün Kalbi",
+        "lastingImpression": "Kalıcı İzlenim",
+        "topNotesDescription": "Parfümümüzün ilk izlenimi, canlı narenciye, bergamut ve taze elma ile açılır, canlandırıcı ve ferahlatıcı bir giriş yaratır.",
+        "middleNotesDescription": "Kalp, yasemin, gül ve menekşenin sofistike karışımını ortaya çıkarır, tarçın ve kakule'nin ince baharatlı akorlarıyla iç içe geçer.",
+        "baseNotesDescription": "Kalıcı temel, sıcak amber, zengin vanilya ve egzotik sandal ağacından oluşur, koku deneyimine derinlik ve uzun ömür sağlar."
+    },
+    "footer": {
+        "description": "2010'dan beri seçkin bireyler için nefis parfümler üretiyoruz. Her koku benzersiz bir hikaye anlatır.",
+        "quickLinks": "Hızlı Bağlantılar",
+        "customerService": "Müşteri Hizmetleri",
+        "contactInfo": "İletişim Bilgileri",
+        "openingHours": "Açılış Saatleri",
+        "followUs": "Takip Et",
+        "links": {
+            "home": "Ana Sayfa",
+            "aboutUs": "Hakkımızda",
+            "collections": "Koleksiyonlar",
+            "fragrances": "Parfümler",
+            "contact": "İletişim",
+            "faq": "SSS",
+            "shippingReturns": "Kargo ve İadeler",
+            "privacyPolicy": "Gizlilik Politikası",
+            "termsConditions": "Şartlar ve Koşullar",
+            "trackOrder": "Siparişi Takip Et"
+        },
+        "hours": {
+            "mondayFriday": "Pazartesi - Cuma:",
+            "saturday": "Cumartesi:",
+            "sunday": "Pazar:",
+            "mondayFridayHours": "09:00 - 20:00",
+            "saturdayHours": "10:00 - 18:00",
+            "sundayHours": "11:00 - 17:00"
+        },
+        "copyright": "© {year} ARDORE Parfüm. Tüm hakları saklıdır.",
+        "tagline": "Parfüm meraklıları için sevgiyle tasarlandı"
+    },
+    "common": {
+        "new": "YENİ",
+        "direction": "ltr"
+    },
+    "productDetails": {
+        "addToCart": "Sepete Ekle",
+        "overview": "Genel Bakış",
+        "notes": "Notalar",
+        "ingredients": "İçerikler",
+        "reviews": "Yorumlar",
+        "essenceOfLuxury": "Lüksün Özü",
+        "youMayAlsoLike": "Bunları da Beğenebilirsiniz",
+        "topNotes": "Üst Notalar",
+        "heartNotes": "Kalp Notları",
+        "baseNotes": "Alt Notalar",
+        "ourCommitment": "Taahhüdümüz",
+        "customerReviews": "Müşteri Yorumları",
+        "basedOn": "{count} yoruma dayalı",
+        "writeReview": "Yorum Yaz",
+        "helpful": "Faydalı ({count})",
+        "report": "Rapor Et",
+        "loadMore": "Daha Fazla Yorum Yükle"
+    },
+    "perfume": {
+        "heroAlt": "Lüks Parfüm",
+        "title": "Gece Yarısı İksiri",
+        "subtitle": "Gizem ve zarafetin büyüleyici karışımı",
+        "price": "₺8.670",
+        "volume": "100ml Eau de Parfum",
+        "addToCart": "Sepete Ekle",
+        "retry": "Yeniden Yükle",
+        "tabs": {
+            "overview": "Genel Bakış",
+            "notes": "Notalar",
+            "ingredients": "İçerikler",
+            "reviews": "Yorumlar"
+        },
+        "overview": {
+            "title": "Lüksün Özü",
+            "paragraph1": "Gece Yarısı İksiri, lüks ve gizemin özünü bünyesinde barındıran sofistike bir parfümdür. Usta parfümör Claire Dubois tarafından yaratılan bu nefis koku, nadir siyah orkide, amber ve sandal ağacı notalarıyla mehtaplı bahçenin cazibesini yakalar.",
+            "paragraph2": "Her şişe en kaliteli malzemelerden titizlikle üretilir, el parlatmalı obsidyen kapak ve altın işlemeli cam içerir. Sonuç sadece bir parfüm değil, herhangi bir koleksiyonu yükselten bir sanat eseridir.",
+            "imageAlt": "Gece Yarısı İksiri Parfümü",
+            "imageAlt2": "Gece Yarısı İksiri Şişe Yakın Çekim",
+            "imageAlt3": "Gece Yarısı İksiri Sunum Kutusu",
+            "bottleSize": "Şişe Boyutu Seç",
+            "badges": {
+                "sustainable": "Sürdürülebilir Kaynak",
+                "crueltyFree": "Hayvanlara Zarar Verilmez"
+            },
+            "details": {
+                "longevity": "Dayanıklılık",
+                "longevityValue": "8-10 saat",
+                "sillage": "Sillaj",
+                "sillageValue": "Orta ila güçlü",
+                "season": "Mevsim",
+                "seasonValue": "Sonbahar / Kış",
+                "occasion": "Durum",
+                "occasionValue": "Akşam / Özel etkinlikler"
+            }
+        },
+        "notes": {
+            "title": "Parfüm Notları",
+            "description": "Gece Yarısı İksiri'nin cildinizde açılışını deneyimleyin, imza koku yaratmak için dikkatli seçilmiş nadir ve değerli bileşenlerin karmaşık uyumunu ortaya çıkarır.",
+            "topNotes": "Üst Notalar",
+            "heartNotes": "Kalp Notları",
+            "baseNotes": "Alt Notalar",
+            "radarChartTitle": "Parfüm Profili",
+            "fragranceProfile": "Gece Yarısı İksiri",
+            "chartDescription": "Radar grafiği, Gece Yarısı İksiri'ndeki ana notların yoğunluğunu ve varlığını gösterir, farklı unsurların parfümün benzersiz profilini oluşturmak için nasıl bir araya geldiğini gösterir.",
+            "fragranceEvolution": "Parfüm Gelişim Zaman Çizelgesi",
+            "timeline": {
+                "0-15min": "İlk 15 Dakika",
+                "15-45min": "15-45 Dakika",
+                "45+min": "45+ Dakika",
+                "opening": "Açılış Aşaması",
+                "heart": "Kalp Aşaması",
+                "base": "Alt Aşama",
+                "openingDesc": "Parfüm canlı narenciye ve baharatlı notalarla açılır. Bergamut, karabiber ve kakule enerjik ve ferahlatıcı bir ilk izlenim yaratır.",
+                "heartDesc": "Açılış notları yerleştikçe, parfümün kalbi lüks çiçeksi unsurlarla kendini ortaya çıkarır. Siyah orkide, yasemin ve iris mükemmel uyum içinde karışır.",
+                "baseDesc": "Son aşamada, amber, sandal ağacı ve vanilyalın sıcak alt notları ciltte kalıcı, zarif bir kuruluş yaratmak için ortaya çıkar."
+            },
+            "items": {
+                "blackPepper": "Karabiber",
+                "bergamot": "Bergamut",
+                "cardamom": "Kakule",
+                "saffron": "Safran",
+                "blackOrchid": "Siyah Orkide",
+                "jasmine": "Yasemin",
+                "iris": "İris",
+                "roseAbsolute": "Gül Absolütü",
+                "amber": "Amber",
+                "sandalwood": "Sandal Ağacı",
+                "vanilla": "Vanilya",
+                "musk": "Misk"
+            }
+        },
+        "ingredients": {
+            "title": "İçerikler",
+            "description": "Parfümlerimiz dengeli ve uzun süreli koku profili yaratmak için en kaliteli doğal bileşenleri yenilikçi sentetik moleküllerle birleştirir.",
+            "natural": "Doğal Bileşenler",
+            "synthetic": "Sentetik Bileşikler",
+            "composition": "Kompozisyon Dağılımı",
+            "composition": {
+                "floral": "Çiçeksi Unsurlar",
+                "woody": "Odunsu Unsurlar",
+                "spicy": "Baharatlı Unsurlar",
+                "citrus": "Narenciye Unsurları",
+                "musk": "Misk Unsurları"
+            },
+            "sustainability": {
+                "title": "Sürdürülebilir Kaynak",
+                "description": "Tedarik zincirimizde adil ticaret uygulamaları ve çevresel sorumluluğu sağlamak için yetiştiriciyle doğrudan ilişkiler sürdürüyoruz.",
+                "imgAlt": "Sürdürülebilir bileşen tarımı"
+            },
+            "ethical": {
+                "title": "Etik Uygulamalar",
+                "description": "Formülasyonlarımız %100 hayvanlara zarar vermez ve çevresel ayak izimizi minimize etmek için çevre dostu süreçler kullanırız.",
+                "imgAlt": "Etik laboratuvar uygulamaları"
+            },
+            "items": {
+                "bergamot": "Bergamut Uçucu Yağı (Citrus bergamia)",
+                "jasmine": "Yasemin Absolütü (Jasminum grandiflorum)",
+                "sandalwood": "Mysore Sandal Ağacı (Santalum album)",
+                "vanilla": "Bourbon Vanilya Özütü (Vanilla planifolia)",
+                "amber": "Labdanum Reçinesi (Cistus ladaniferus)",
+                "musk": "Ambrette Tohum Yağı (Hibiscus abelmoschus)",
+                "ambroxan": "Ambroxan (Ambergris alternatifi)",
+                "galaxolide": "Galaxolide (Temiz misk aroması)",
+                "hedione": "Hedione (Yasemin güçlendirici)",
+                "iso": "Iso E Super (Odunsu, amber nota)",
+                "linalool": "Linalool (Çiçeksi, baharatlı nota)",
+                "coumarin": "Coumarin (Tatlı, saman benzeri nota)"
+            },
+            "disclaimer": {
+                "title": "Ürün Bilgisi",
+                "text": "Bileşenler üreticinin takdirine bağlı olarak değişebilir. En eksiksiz ve güncel bileşen listesi için lütfen ürün ambalajına bakın."
+            }
+        },
+        "reviews": {
+            "title": "Müşteri Yorumları",
+            "description": "Müşterilerimizin Gece Yarısı İksiri deneyimleri hakkında söylediklerini okuyun.",
+            "writeReview": "Yorum Yaz",
+            "basedOn": "{count} yoruma dayalı",
+            "verifiedPurchase": "Doğrulanmış Satın Alma",
+            "helpful": "Faydalı ({count})",
+            "report": "Rapor Et",
+            "filters": {
+                "all": "Tüm Yorumlar",
+                "positive": "Pozitif",
+                "critical": "Eleştirel",
+                "recent": "En Son"
+            },
+            "reviewers": {
+                "john": "Ahmet K.",
+                "sophia": "Ayşe L.",
+                "michael": "Mehmet T.",
+                "emma": "Elif W."
+            },
+            "comments": {
+                "johnReview": "Bu parfüm kesinlikle olağanüstü. Gizem ve sofistikeliğin mükemmel dengesine sahip. Dayanıklılığı etkileyici - günün sonunda hala ciltimdeki kokuyu algılayabiliyorum.",
+                "sophiaReview": "Gece Yarısı İksiri imza kokum haline geldi. Her taktığımda iltifat alıyorum. Siyah orkide notası özellikle büyüleyici.",
+                "michaelReview": "Mükemmel sillaja sahip çok lüks bir parfüm. Tek eleştirim son saatlerde biraz daha yayılmasını istememdir, ama kokunun kendisi muhteşem.",
+                "emmaReview": "Her kuruşuna değer. Şişe tasarımı parfümün kendisi kadar nefis. Gün boyunca güzel gelişim gösteriyor, zaman geçtikçe farklı yönlerini ortaya çıkarıyor."
+            }
+        },
+        "related": {
+            "title": "Bunları da Beğenebilirsiniz",
+            "description": "Premium koleksiyonumuzdan diğer nefis parfümleri keşfedin.",
+            "products": {
+                "midnight": {
+                    "name": "Gece Yarısı Serenadi",
+                    "description": "Siyah orkide ve amber notalarıyla büyüleyici bir gece karışımı",
+                    "price": "₺5.850"
+                },
+                "golden": {
+                    "name": "Altın İksir",
+                    "description": "Safran, bal ve değerli ağaçlarla lüks sıcaklık",
+                    "price": "₺6.300"
+                },
+                "velvet": {
+                    "name": "Kadife Noir",
+                    "description": "Zengin vanilya, oud ve karabiber ile yoğun baştan çıkarıcılık",
+                    "price": "₺5.400"
+                }
+            }
+        },
+        "subscription": {
+            "title": "İlham",
+            "highlightedTitle": "Almaya Devam Edin",
+            "description": "Özel teklifler, parfüm içgörüleri ve yeni çıkışlara erken erişim için haber bültenimize abone olun.",
+            "emailPlaceholder": "E-posta adresiniz",
+            "button": "Abone Ol",
+            "privacyNotice": "Abone olarak Gizlilik Politikamızı kabul edersiniz. Gizliliğinize saygı duyuyoruz ve bilgilerinizi asla paylaşmayacağız."
+        }
+    },
+    "Favorites": {
+        "title": "Favoriler",
+        "empty": "Henüz favori yok"
+    },
+    "Navbar": {
+        "login": "Giriş Yap",
+        "register": "Kayıt Ol"
+    },
+    "Auth": {
+        "login": {
+            "title": "Tekrar Hoş Geldiniz",
+            "subtitle": "Hesabınıza giriş yapın",
+            "signIn": "Giriş Yap",
+            "signingIn": "Giriş yapılıyor...",
+            "noAccount": "Hesabınız yok mu?",
+            "signInInstead": "Bunun yerine giriş yapın"
+        },
+        "register": {
+            "title": "Hesap Oluştur",
+            "subtitle": "Ardore deneyimine katılın",
+            "signUp": "Kayıt Ol",
+            "registering": "Hesap oluşturuluyor...",
+            "hasAccount": "Zaten hesabınız var mı?",
+            "createAccount": "Hesap oluştur"
+        },
+        "fields": {
+            "username": "Kullanıcı Adı",
+            "usernamePlaceholder": "Kullanıcı adınızı girin",
+            "name": "Ad Soyad",
+            "namePlaceholder": "Ad soyadınızı girin",
+            "email": "E-posta Adresi",
+            "emailPlaceholder": "E-posta adresinizi girin",
+            "password": "Şifre",
+            "passwordPlaceholder": "Şifrenizi girin",
+            "confirmPassword": "Şifre Onayı",
+            "confirmPasswordPlaceholder": "Şifrenizi onaylayın"
+        },
+        "validation": {
+            "usernameRequired": "Kullanıcı adı gerekli",
+            "nameRequired": "Ad gerekli",
+            "emailRequired": "E-posta gerekli",
+            "emailInvalid": "Lütfen geçerli bir e-posta adresi girin",
+            "passwordRequired": "Şifre gerekli",
+            "passwordMinLength": "Şifre en az 6 karakter olmalı",
+            "confirmPasswordRequired": "Lütfen şifrenizi onaylayın",
+            "passwordsDoNotMatch": "Şifreler eşleşmiyor"
+        }
+    },
+    "UserMenu": {
+        "guest": "Misafir",
+        "profile": "Profilim",
+        "orders": "Siparişlerim",
+        "favorites": "Favorilerim",
+        "settings": "Ayarlar",
+        "logout": "Çıkış Yap"
+    },
+    "Profile": {
+        "title": "Profilim",
+        "subtitle": "Hesap bilgilerinizi yönetin",
+        "personalInfo": "Kişisel Bilgiler",
+        "name": "Ad Soyad",
+        "email": "E-posta Adresi",
+        "memberSince": "Üye olma tarihi",
+        "save": "Değişiklikleri Kaydet",
+        "cancel": "İptal",
+        "accountStats": "Hesap İstatistikleri",
+        "totalOrders": "Toplam Sipariş",
+        "favorites": "Favori Ürünler",
+        "accountType": "Hesap Türü"
+    },
+    "Perfume": {
+        "title": "Parfümler",
+        "description": "Parfümlerimizin listesi",
+        "price": "Fiyat"
+    },
+    "perfumes": {
+        "title": "Parfümler",
+        "description": "Parfümlerimizin listesi",
+        "price": "Fiyat"
+    }
+}
