@@ -186,7 +186,7 @@ export default function OrdersPage() {
                         <div className="w-16 h-16 bg-gray-800 rounded-lg overflow-hidden flex-shrink-0">
                           {item.product?.image && (
                             <img
-                              src={`http://localhost:5000/${item.product.image}`}
+                              src={`https://api.ardoreperfume.com/${item.product.image}`}
                               alt={item.product?.title?.en || 'Product'}
                               className="w-full h-full object-cover"
                             />

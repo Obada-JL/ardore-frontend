@@ -212,7 +212,7 @@ export const OrderProvider = ({ children }) => {
     dispatch({ type: 'SET_DISCOUNT_ERROR', payload: null });
 
     try {
-      const response = await fetch('http://localhost:5000/api/discounts/validate', {
+      const response = await fetch('https://api.ardoreperfume.com/api/discounts/validate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -189,7 +189,7 @@ export default function Home() {
       <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={aboutData?.mainSection?.image ? `http://localhost:5000${aboutData.mainSection.image}` : "https://public.readdy.ai/ai/img_res/731db9a2972a79abc44a1e1e28b80367.jpg"}
+            src={aboutData?.mainSection?.image ? `https://api.ardoreperfume.com${aboutData.mainSection.image}` : "https://public.readdy.ai/ai/img_res/731db9a2972a79abc44a1e1e28b80367.jpg"}
             alt="Luxury Perfume" 
             className="w-full h-full object-cover object-top opacity-80 scale-105 animate-slow-zoom"
           />
@@ -286,7 +286,7 @@ export default function Home() {
                 >
                   <div className="relative mb-0 h-80 overflow-hidden">
                     <img 
-                      src={perfume.image ? `http://localhost:5000/${perfume.image}` : `https://public.readdy.ai/ai/img_res/${['1dfb8913879312f00039106067df2cf6', 'de27af8683a2e5e20560a064fb477a6d', 'fe7a20be2d576e3b20417a2104a1715d', '70f966ad64f11c0e542e5f99c6395c40', 'b7767b83ee9982e040c242d2fbd2bf8d', 'af381fd0d4b2fb4953f6bb2d331d6ecc'][index % 6]}.jpg`}
+                      src={perfume.image ? `https://api.ardoreperfume.com/${perfume.image}` : `https://public.readdy.ai/ai/img_res/${['1dfb8913879312f00039106067df2cf6', 'de27af8683a2e5e20560a064fb477a6d', 'fe7a20be2d576e3b20417a2104a1715d', '70f966ad64f11c0e542e5f99c6395c40', 'b7767b83ee9982e040c242d2fbd2bf8d', 'af381fd0d4b2fb4953f6bb2d331d6ecc'][index % 6]}.jpg`}
                       alt={getLocalizedText(perfume.title)} 
                       className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     />
@@ -485,7 +485,7 @@ export default function Home() {
                   style={{ animationDelay: `${0.1 * (index + 1)}s` }}
                 >
                   <img 
-                    src={category.image ? `http://localhost:5000/${category.image}` : `https://public.readdy.ai/ai/img_res/${['41a409218a35a024cbea9e2fa5100f71', 'ed493f30806a85041c0c9b33d101ab3a', 'be703a1f32c5337e9ee130a140c6a2c3', '6287670a527e5f7566c4898e04c57a40', 'b7767b83ee9982e040c242d2fbd2bf8d', 'af381fd0d4b2fb4953f6bb2d331d6ecc'][index % 6]}.jpg`}
+                    src={category.image ? `https://api.ardoreperfume.com/${category.image}` : `https://public.readdy.ai/ai/img_res/${['41a409218a35a024cbea9e2fa5100f71', 'ed493f30806a85041c0c9b33d101ab3a', 'be703a1f32c5337e9ee130a140c6a2c3', '6287670a527e5f7566c4898e04c57a40', 'b7767b83ee9982e040c242d2fbd2bf8d', 'af381fd0d4b2fb4953f6bb2d331d6ecc'][index % 6]}.jpg`}
                     alt={getLocalizedText(category.name)} 
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                   />

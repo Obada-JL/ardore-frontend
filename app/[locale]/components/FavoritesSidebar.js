@@ -217,7 +217,7 @@ export default function FavoritesSidebar({ isOpen, onClose }) {
                                                         isRTL ? 'bg-gray-800' : 'bg-gradient-to-br from-gray-100 to-gray-200'
                                                     }`}>
                                                         <Image
-                                                            src={`http://localhost:5000/${perfume.image}`}
+                                                            src={`https://api.ardoreperfume.com/${perfume.image}`}
                                                             alt={getLocalizedText(perfume.title)}
                                                             fill
                                                             className="object-cover"

@@ -166,7 +166,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                               <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden">
                                 {item.product.mainImage && (
                                   <img
-                                    src={`http://localhost:5000/uploads/${item.product.mainImage}`}
+                                    src={`https://api.ardoreperfume.com/uploads/${item.product.mainImage}`}
                                     alt={getLocalizedText(item.product.title) || 'Product'}
                                     className="w-full h-full object-cover"
                                   />

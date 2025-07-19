@@ -197,7 +197,7 @@ export default function FavoritesSidebar({ isOpen, onClose }) {
                                                 <div className="relative w-20 h-20 flex-shrink-0">
                                                     <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden">
                                                         <Image
-                                                            src={`http://localhost:5000/${perfume.image}`}
+                                                            src={`https://api.ardoreperfume.com/${perfume.image}`}
                                                             alt={getLocalizedText(perfume.title)}
                                                             fill
                                                             className="object-cover"
