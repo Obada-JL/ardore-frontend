@@ -97,15 +97,32 @@ const orderReducer = (state, action) => {
       };
     case 'CALCULATE_TOTALS':
       const subtotal = state.cart.reduce((total, item) => {
-        const price = item.product.discountedPrice || item.product.price;
-        return total + (price * item.quantity);
+        let price = 0;
+        
+        // Handle new sizesPricing structure
+        if (item.product.sizesPricing && item.product.sizesPricing.length > 0) {
+          const sizePricing = item.product.sizesPricing.find(sp => sp.size === item.size);
+          price = sizePricing ? sizePricing.price : item.product.sizesPricing[0].price;
+        } else {
+          // Fallback to old structure
+          price = item.product.discountedPrice || item.product.price || 0;
+        }
+        
+        // Ensure price is a valid number
+        const validPrice = isNaN(price) ? 0 : parseFloat(price);
+        const validQuantity = isNaN(item.quantity) ? 0 : parseInt(item.quantity);
+        
+        return total + (validPrice * validQuantity);
       }, 0);
       
-      const cartCount = state.cart.reduce((count, item) => count + item.quantity, 0);
+      const cartCount = state.cart.reduce((count, item) => {
+        const validQuantity = isNaN(item.quantity) ? 0 : parseInt(item.quantity);
+        return count + validQuantity;
+      }, 0);
       
       // Calculate discount amount
       let discountAmount = 0;
-      if (state.appliedDiscount) {
+      if (state.appliedDiscount && !isNaN(subtotal) && subtotal > 0) {
         if (state.appliedDiscount.discountType === 'percentage') {
           discountAmount = (subtotal * state.appliedDiscount.discountValue) / 100;
           if (state.appliedDiscount.maxDiscountAmount && discountAmount > state.appliedDiscount.maxDiscountAmount) {
@@ -116,14 +133,17 @@ const orderReducer = (state, action) => {
         }
       }
       
-      const finalTotal = Math.max(0, subtotal - discountAmount);
+      // Ensure all calculations are valid numbers
+      const validSubtotal = isNaN(subtotal) ? 0 : subtotal;
+      const validDiscountAmount = isNaN(discountAmount) ? 0 : discountAmount;
+      const finalTotal = Math.max(0, validSubtotal - validDiscountAmount);
       
       return {
         ...state,
-        subtotal,
+        subtotal: validSubtotal,
         cartCount,
         cartTotal: finalTotal, // Keep backward compatibility
-        discountAmount,
+        discountAmount: validDiscountAmount,
         finalTotal
       };
     default:

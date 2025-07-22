@@ -281,7 +281,7 @@ export default function PerfumeDetails() {
   // Loading state
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-black to-[#050505] text-white flex items-center justify-center bg-black">
+      <div className="min-h-screen bg-black bg-gradient-to-b from-black to-[#050505] text-white flex items-center justify-center bg-black">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#e8b600] mx-auto mb-4"></div>
           <p className="text-gray-400">Loading perfume...</p>
@@ -293,7 +293,7 @@ export default function PerfumeDetails() {
   // Error state
   if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-black bg-black to-[#050505] text-white flex items-center justify-center">
+      <div className="min-h-screen bg-black bg-gradient-to-b from-black to-[#050505] text-white flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-400 mb-4">Error: {error}</p>
           <button 
@@ -310,7 +310,7 @@ export default function PerfumeDetails() {
   // If no perfume data
   if (!perfume) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-black to-[#050505] text-white flex items-center justify-center bg-black">
+      <div className="min-h-screen bg-black bg-gradient-to-b from-black to-[#050505] text-white flex items-center justify-center bg-black">
         <div className="text-center">
           <p className="text-gray-400">Perfume not found</p>
         </div>
@@ -319,17 +319,14 @@ export default function PerfumeDetails() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black to-[#050505] text-white">
-      {/* Header & Navigation */}
-      <Navbar />
-      
+    <div className="min-h-screen bg-black bg-gradient-to-b from-black to-[#050505] text-white">
       {/* Hero Section */}
-      <div className="relative min-h-screen flex items-center overflow-hidden">
+      <div className="relative min-h-screen bg-black flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 z-30">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen py-12 sm:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen bg-black py-12 sm:py-16 lg:py-20">
             {/* Product Details */}
             <div className="opacity-0 animate-fade-in-up order-2 lg:order-1">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light text-[#e8b600] mb-3 sm:mb-4">{getLocalizedText(perfume.title)}</h1>
@@ -683,9 +680,6 @@ export default function PerfumeDetails() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 } 
