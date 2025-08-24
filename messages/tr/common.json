@@ -428,7 +428,26 @@
     },
     "perfumes": {
         "title": "Parfümler",
+        "subtitle": "Hassasiyet ve tutkuyla üretilmiş muhteşem parfüm yelpazemizi keşfedin",
         "description": "Parfümlerimizin listesi",
-        "price": "Fiyat"
+        "price": "Fiyat",
+        "loading": "Parfümler yükleniyor...",
+        "error": "Parfümler yüklenirken hata oluştu",
+        "retry": "Tekrar Dene",
+        "noProducts": "Şu anda parfüm bulunmamaktadır.",
+        "collection": "Koleksiyonumuz",
+        "heroDescription": "Hassasiyet ve tutkuyla üretilmiş muhteşem parfüm yelpazemizi keşfedin",
+        "searchPlaceholder": "Mükemmel parfümünüzü arayın...",
+        "allCategories": "Tüm Kategoriler",
+        "activeFilters": "Aktif filtreler:",
+        "clearFilters": "Tümünü temizle",
+        "searching": "Aranıyor...",
+        "search": "Ara",
+        "searchingPerfumes": "Parfümler aranıyor...",
+        "noResultsFound": "Sonuç bulunamadı",
+        "tryDifferentSearch": "Arama kriterlerinizi değiştirmeyi deneyin veya tüm ürünlere göz atın",
+        "checkBackLater": "Yeni gelenler için daha sonra tekrar kontrol edin",
+        "showAllProducts": "Tüm ürünleri göster",
+        "showingResults": "{count} ürün bulundu"
     }
 }

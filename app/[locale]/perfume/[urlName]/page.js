@@ -82,12 +82,12 @@ export default function PerfumeDetails() {
       const maxPrice = Math.max(...prices);
       
       if (minPrice === maxPrice) {
-        return `$${minPrice}`;
+        return `₺${minPrice}`;
       } else {
-        return `$${minPrice} - $${maxPrice}`;
+        return `₺${minPrice} - ₺${maxPrice}`;
       }
     }
-    return `$${perfume?.price || 0}`;
+    return `₺${perfume?.price || 0}`;
   };
 
   useEffect(() => {
@@ -278,6 +278,35 @@ export default function PerfumeDetails() {
     }
   };
 
+  const handleShare = async () => {
+    if (!perfume) return;
+    
+    const shareData = {
+      title: getLocalizedText(perfume.title),
+      text: getLocalizedText(perfume.description),
+      url: window.location.href
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+      // Fallback: copy to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      } catch (clipboardError) {
+        console.error('Clipboard error:', clipboardError);
+        alert('Unable to share or copy link');
+      }
+    }
+  };
+
   // Loading state
   if (loading) {
     return (
@@ -335,7 +364,7 @@ export default function PerfumeDetails() {
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 mb-6 sm:mb-8">
                 <div>
                   <p className="text-2xl sm:text-3xl font-light text-[#e8b600]">
-                    {selectedSize ? `$${getCurrentPrice()}` : getPriceRange()}
+                    {selectedSize ? `₺${getCurrentPrice()}` : getPriceRange()}
                   </p>
                   <p className="text-xs sm:text-sm text-gray-400">
                     {selectedSize ? `${selectedSize}ml ${getLocalizedText(perfume.sizeType)}` : 'Select size for price'}
@@ -378,7 +407,10 @@ export default function PerfumeDetails() {
                   >
                     <i className={`${isLiked ? 'fas' : 'far'} fa-heart text-[#e8b600] text-base sm:text-lg ${favoriteLoading ? 'animate-pulse' : ''}`}></i>
                   </button>
-                  <button className="border border-[#e8b600]/40 bg-black/20 backdrop-blur-sm px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#e8b600]/10 transition-all duration-300 transform hover:-translate-y-1">
+                  <button 
+                    onClick={handleShare}
+                    className="border border-[#e8b600]/40 bg-black/20 backdrop-blur-sm px-4 sm:px-5 py-3 sm:py-4 hover:bg-[#e8b600]/10 transition-all duration-300 transform hover:-translate-y-1"
+                  >
                     <i className="fas fa-share-alt text-[#e8b600] text-base sm:text-lg"></i>
                   </button>
                 </div>
@@ -408,7 +440,7 @@ export default function PerfumeDetails() {
       <div className="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-[#e8b600]/20">
         <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex justify-center space-x-4 sm:space-x-6 lg:space-x-8 overflow-x-auto">
-            {['overview', 'notes', 'ingredients'].map((tab) => (
+            {['overview', 'ingredients'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => handleTabChange(tab)}
@@ -467,27 +499,11 @@ export default function PerfumeDetails() {
                         >
                           <span className="text-sm sm:text-lg">{size}ml</span>
                           {price && (
-                            <span className="text-xs sm:text-sm font-semibold">${price}</span>
+                            <span className="text-xs sm:text-sm font-semibold">₺{price}</span>
                           )}
                         </button>
                       );
                     })}
-                  </div>
-                </div>
-
-                {/* Quality Selection */}
-                <div className="mb-8 sm:mb-10">
-                  <h3 className="text-lg sm:text-xl text-[#e8b600] mb-3 sm:mb-4">Quality</h3>
-                  <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-3 sm:gap-4">
-                    {['Original', 'Premium', 'Luxury'].map((quality) => (
-                      <button 
-                        key={quality}
-                        onClick={() => setSelectedQuality(quality)}
-                        className={`py-2 px-3 sm:px-6 border ${selectedQuality === quality ? 'border-[#e8b600] text-[#e8b600] bg-[#e8b600]/10' : 'border-gray-600 text-gray-400'} hover:border-[#e8b600] hover:text-[#e8b600] transition-all duration-300 text-xs sm:text-base`}
-                      >
-                        {quality}
-                      </button>
-                    ))}
                   </div>
                 </div>
                 
@@ -508,6 +524,7 @@ export default function PerfumeDetails() {
                     dir={rtl ? 'rtl' : 'ltr'}
                   >
                     {/* Main image */}
+                    {console.log(perfume.sliderImages)}
                     {perfume.sliderImages && perfume.sliderImages.map((image, index) => (
                       <SwiperSlide key={index}>
                         <img 
@@ -536,47 +553,6 @@ export default function PerfumeDetails() {
                 </div>
                 
                 <div className="absolute -top-10 -right-20 w-32 h-32 rounded-full bg-[#e8b600]/5 filter blur-3xl opacity-60 hidden lg:block"></div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Notes Section */}
-        {activeTab === 'notes' && (
-          <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-              <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light text-[#e8b600] mb-6 sm:mb-8 relative inline-block">
-                  {t('notes.title')}
-                  <div className="w-1/2 h-0.5 bg-[#e8b600]/50 absolute -bottom-2 left-0"></div>
-                </h2>
-                
-                <div className="space-y-6 sm:space-y-8">
-                  <div className="border-l-4 border-[#e8b600]/50 pl-4 sm:pl-6">
-                    <h3 className="text-lg sm:text-xl text-[#e8b600] mb-2 sm:mb-3">{t('notes.topNotes')}</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                      {t('notes.topNotesDesc')}
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-[#e8b600]/50 pl-4 sm:pl-6">
-                    <h3 className="text-lg sm:text-xl text-[#e8b600] mb-2 sm:mb-3">{t('notes.middleNotes')}</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                      {t('notes.middleNotesDesc')}
-                    </p>
-                  </div>
-                  
-                  <div className="border-l-4 border-[#e8b600]/50 pl-4 sm:pl-6">
-                    <h3 className="text-lg sm:text-xl text-[#e8b600] mb-2 sm:mb-3">{t('notes.baseNotes')}</h3>
-                    <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                      {t('notes.baseNotesDesc')}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div ref={chartRef} style={{ width: '100%', height: '300px' }} className="sm:h-[400px]"></div>
               </div>
             </div>
           </div>
@@ -634,12 +610,12 @@ export default function PerfumeDetails() {
                   const maxPrice = Math.max(...prices);
                   
                   if (minPrice === maxPrice) {
-                    return `$${minPrice}`;
+                    return `₺${minPrice}`;
                   } else {
-                    return `$${minPrice} - $${maxPrice}`;
+                    return `₺${minPrice} - ₺${maxPrice}`;
                   }
                 }
-                return `$${product.price || 0}`;
+                return `₺${product.price || 0}`;
               };
 
               return (

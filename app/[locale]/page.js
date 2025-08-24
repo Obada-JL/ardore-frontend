@@ -312,13 +312,13 @@ export default function Home() {
                             const maxPrice = Math.max(...prices);
                             
                             if (minPrice === maxPrice) {
-                              return `$${minPrice}`;
+                              return `₺${minPrice}`;
                             } else {
-                              return `$${minPrice} - $${maxPrice}`;
+                              return `₺${minPrice} - ₺${maxPrice}`;
                             }
                           })()
                         ) : (
-                          `$${perfume.price || 0}`
+                          `₺${perfume.price || 0}`
                         )}
                       </p>
                       <button className="text-white/70 hover:text-[#e8b600] transition-colors duration-300 transform hover:scale-110">
@@ -352,109 +352,6 @@ export default function Home() {
       </section>
 
       {/* Fragrance Notes Interactive Section - Enhanced */}
-      <section id="fragrances" className="py-20 bg-[#0A0A0A] relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e8b600]/30 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#e8b600]/30 to-transparent"></div>
-        <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-[#e8b600]/5 filter blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-[#e8b600]/5 filter blur-3xl"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-light mb-4">
-              <span className="relative inline-block">
-                {t('fragrances.title')} <span className="text-[#e8b600] animate-shimmer">{t('fragrances.highlightedTitle')}</span>
-                <span className="absolute -bottom-2 left-1/4 w-1/2 h-px bg-[#e8b600]/50"></span>
-              </span>
-            </h2>
-            <div className="w-24 h-0.5 bg-[#e8b600]/50 mx-auto mb-6"></div>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              {t('fragrances.description')}
-            </p>
-          </div>
-          
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-            <div className="w-full md:w-1/2 relative">
-              <div className="relative mx-auto w-80 h-80">
-                {/* Top notes circle - enhanced */}
-                <div className="absolute inset-0 border-2 border-[#e8b600] rounded-full opacity-30 animate-pulse" style={{ animationDuration: '3s' }}></div>
-                
-                {/* Middle notes circle - enhanced */}
-                <div className="absolute inset-8 border-2 border-[#e8b600] rounded-full opacity-50 animate-pulse" style={{ animationDuration: '4s' }}></div>
-                
-                {/* Base notes circle - enhanced */}
-                <div className="absolute inset-16 border-2 border-[#e8b600] rounded-full opacity-70 animate-pulse" style={{ animationDuration: '5s' }}></div>
-                
-                {/* Center - enhanced */}
-                <div className="absolute inset-24 bg-gradient-to-br from-[#e8b600] to-[#d4aa00] rounded-full flex items-center justify-center animate-pulse-slow">
-                  <span className="text-black font-medium tracking-wider">{t('fragrances.essence')}</span>
-                </div>
-                
-                {/* Notes labels - enhanced */}
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 text-center">
-                  <div className="text-[#e8b600] font-light tracking-widest">{t('fragrances.topNotes.title')}</div>
-                  <div className="text-sm text-gray-300">{t('fragrances.topNotes.subtitle')}</div>
-                </div>
-                
-                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 text-center">
-                  <div className="text-[#e8b600] font-light tracking-widest">{t('fragrances.middleNotes.title')}</div>
-                  <div className="text-sm text-gray-300">{t('fragrances.middleNotes.subtitle')}</div>
-                </div>
-                
-                <div className="absolute top-2/3 left-1/2 -translate-x-1/2 text-center">
-                  <div className="text-[#e8b600] font-light tracking-widest">{t('fragrances.baseNotes.title')}</div>
-                  <div className="text-sm text-gray-300">{t('fragrances.baseNotes.subtitle')}</div>
-                </div>
-              </div>
-              
-              {/* Gold particles - enhanced */}
-              <div className="absolute inset-0 opacity-20 pointer-events-none">
-                {Array.from({ length: 30 }).map((_, i) => (
-                  <div 
-                    key={i}
-                    className="absolute w-1 h-1 bg-[#e8b600] rounded-full"
-                    style={{
-                      top: `${Math.random() * 100}%`,
-                      left: `${Math.random() * 100}%`,
-                      opacity: Math.random() * 0.7 + 0.3,
-                      transform: `scale(${Math.random() * 2 + 0.5})`,
-                      animation: `float ${Math.random() * 5 + 5}s infinite ease-in-out`
-                    }}
-                  ></div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="w-full md:w-1/2">
-              <div className="space-y-8">
-                <div className="p-6 border border-[#e8b600]/30 hover:border-[#e8b600] transition-all duration-300 cursor-pointer bg-black/30 hover:bg-black/50 group animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                  <h3 className="text-[#e8b600] text-xl mb-2 group-hover:translate-x-1 transition-transform duration-300">{t('fragrances.topNotes.title')}</h3>
-                  <div className="w-12 h-0.5 bg-[#e8b600]/50 mb-3 transition-all duration-300 group-hover:w-20 group-hover:bg-[#e8b600]"></div>
-                  <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    {t('fragrances.topNotes.description')}
-                  </p>
-                </div>
-                
-                <div className="p-6 border border-[#e8b600]/30 hover:border-[#e8b600] transition-all duration-300 cursor-pointer bg-black/30 hover:bg-black/50 group animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                  <h3 className="text-[#e8b600] text-xl mb-2 group-hover:translate-x-1 transition-transform duration-300">{t('fragrances.middleNotes.title')}</h3>
-                  <div className="w-12 h-0.5 bg-[#e8b600]/50 mb-3 transition-all duration-300 group-hover:w-20 group-hover:bg-[#e8b600]"></div>
-                  <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    {t('fragrances.middleNotes.description')}
-                  </p>
-                </div>
-                
-                <div className="p-6 border border-[#e8b600]/30 hover:border-[#e8b600] transition-all duration-300 cursor-pointer bg-black/30 hover:bg-black/50 group animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-                  <h3 className="text-[#e8b600] text-xl mb-2 group-hover:translate-x-1 transition-transform duration-300">{t('fragrances.baseNotes.title')}</h3>
-                  <div className="w-12 h-0.5 bg-[#e8b600]/50 mb-3 transition-all duration-300 group-hover:w-20 group-hover:bg-[#e8b600]"></div>
-                  <p className="text-gray-300 group-hover:text-white transition-colors duration-300">
-                    {t('fragrances.baseNotes.description')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Collection Categories - Enhanced */}
       <section id="categories" className="py-20 bg-black relative overflow-hidden">

@@ -71,7 +71,7 @@ const DetailsPage= () => {
             
             <div className="flex items-center flex-wrap gap-8 mb-8">
               <div>
-                <p className="text-3xl font-light text-[#e8b600]">$289.00</p>
+                <p className="text-3xl font-light text-[#e8b600]">₺289.00</p>
                 <p className="text-sm text-gray-400">100ml Eau de Parfum</p>
               </div>
               
@@ -534,22 +534,22 @@ const DetailsPage= () => {
             {[
               {
                 name: 'Velvet Noir',
-                price: '$245.00',
+                price: '₺245.00',
                 image: 'https://public.readdy.ai/ai/img_res/12ddd5846c7a0f843c0e8995178c0d21.jpg'
               },
               {
                 name: 'Golden Oud',
-                price: '$320.00',
+                price: '₺320.00',
                 image: 'https://public.readdy.ai/ai/img_res/945058f75bcf33b68d7004676e26fff2.jpg'
               },
               {
                 name: 'Moonlight Jasmine',
-                price: '$275.00',
+                price: '₺275.00',
                 image: 'https://public.readdy.ai/ai/img_res/284d56475704fa3481336dcd29ca708f.jpg'
               },
               {
                 name: 'Amber Mystique',
-                price: '$295.00',
+                price: '₺295.00',
                 image: 'https://public.readdy.ai/ai/img_res/ed664c8bb74a219b914289e7224c19c6.jpg'
               }
             ].map((product, index) => (

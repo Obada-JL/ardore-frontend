@@ -67,6 +67,7 @@
     },
     "perfumes": {
         "title": "Perfumes",
+        "subtitle": "Discover our exquisite range of fragrances, each crafted with precision and passion",
         "description": "Our exquisite fragrance collection",
         "price": "Price",
         "loading": "Loading perfumes...",
@@ -74,7 +75,19 @@
         "retry": "Retry",
         "noProducts": "No perfumes available at the moment.",
         "collection": "Our Collection",
-        "heroDescription": "Discover our exquisite range of fragrances, each crafted with precision and passion"
+        "heroDescription": "Discover our exquisite range of fragrances, each crafted with precision and passion",
+        "searchPlaceholder": "Search for your perfect fragrance...",
+        "allCategories": "All Categories",
+        "activeFilters": "Active filters:",
+        "clearFilters": "Clear all",
+        "searching": "Searching...",
+        "search": "Search",
+        "searchingPerfumes": "Searching perfumes...",
+        "noResultsFound": "No results found",
+        "tryDifferentSearch": "Try adjusting your search criteria or browse all products",
+        "checkBackLater": "Check back later for new arrivals",
+        "showAllProducts": "Show all products",
+        "showingResults": "Found {count} product{count, plural, =1 {} other {s}}"
     },
     "Favorites": {
         "title": "Favorites",

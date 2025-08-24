@@ -254,13 +254,13 @@ export default function FavoritesSidebar({ isOpen, onClose }) {
                                                                     const maxPrice = Math.max(...prices);
                                                                     
                                                                     if (minPrice === maxPrice) {
-                                                                        return `$${minPrice}`;
+                                                                        return `₺${minPrice}`;
                                                                     } else {
-                                                                        return `$${minPrice} - $${maxPrice}`;
+                                                                        return `₺${minPrice} - ₺${maxPrice}`;
                                                                     }
                                                                 })()
                                                             ) : (
-                                                                `$${perfume.price || 0}`
+                                                                `₺${perfume.price || 0}`
                                                             )}
                                                         </span>
                                                         <button
