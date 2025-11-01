@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import GoogleAnalytics from "./context/GoogleAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,14 +14,22 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Ardore Perfume",
-  description: "Explore the world of Ardore Perfume, where luxury meets elegance. Discover our exquisite collection of fragrances designed to elevate your sense of style.",
+  description:
+    "Explore the world of Ardore Perfume, where luxury meets elegance. Discover our exquisite collection of fragrances designed to elevate your sense of style.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="vsc-initialized">
+      <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GA_ID} />
       <head>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossOrigin="anonymous"
+          referrerPolicy="no-referrer"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased vsc-initialized`}
