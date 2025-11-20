@@ -1,20 +1,20 @@
-import createMiddleware from 'next-intl/middleware';
+import createMiddleware from "next-intl/middleware";
 
 export default createMiddleware({
   // A list of all locales that are supported
-  locales: ['tr', 'ar'],
-  
+  locales: ["tr", "ar"],
+
   // If this locale is matched, pathnames work without a prefix (e.g. `/about`)
-  defaultLocale: 'tr',
-  
+  defaultLocale: "tr",
+
   // Whether to add locale prefix to all paths including default locale
-  localePrefix: 'always',
-  
+  localePrefix: "always",
+
   // Allow users to change language from anywhere in the app
   localeDetection: true,
 });
 
 export const config = {
   // Skip all paths that should not be internationalized
-  matcher: ['/((?!api|_next|.*\\..*).*)']
-}; 
+  matcher: ["/((?!api|_next|feedback|.*\\..*).*)"],
+};

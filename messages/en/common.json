@@ -229,5 +229,47 @@
             "line1": "+1 (800) 123-4567",
             "line2": "Mon-Fri: 9 AM - 6 PM EST"
         }
+    },
+    "feedback": {
+        "title": "Feedback",
+        "selectLanguage": "Select Language",
+        "selectLanguageDescription": "Please select your preferred language to continue",
+        "questions": {
+            "q1": "What perfume code are you using?",
+            "q2": "Will you buy again or recommend to others?",
+            "q3": "Do you think the price is appropriate for the quality?",
+            "q4": "Rate the bottle and packaging?",
+            "q5": "Rate the fragrance strength/spread?",
+            "q6": "Rate the fragrance scent?",
+            "q7": "How would you describe the fragrance longevity (how many hours does it last)?",
+            "q8": "What size perfume are you using?",
+            "q9": "Your opinion matters! Share any notes or suggestions"
+        },
+        "answers": {
+            "definitely": "Definitely",
+            "maybe": "Maybe",
+            "no": "No",
+            "yes": "Yes",
+            "other": "Other",
+            "size100ml": "100 ml",
+            "size50ml": "50 ml",
+            "size50mlB": "50 ml (B quality)",
+            "sizeSmall": "3/6/10 ml"
+        },
+        "form": {
+            "name": "Name (Optional)",
+            "namePlaceholder": "Enter your name",
+            "perfumeCode": "Perfume Code",
+            "perfumeCodePlaceholder": "Enter perfume code",
+            "submit": "Submit Feedback",
+            "submitting": "Submitting...",
+            "success": "Thank you for your feedback!",
+            "successMessage": "Your feedback has been submitted successfully.",
+            "error": "Error submitting feedback",
+            "errorMessage": "Please try again later.",
+            "required": "Required",
+            "rating": "Rating",
+            "longevityPlaceholder": "How many hours does the fragrance last?"
+        }
     }
 }

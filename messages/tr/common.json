@@ -449,5 +449,47 @@
         "checkBackLater": "Yeni gelenler için daha sonra tekrar kontrol edin",
         "showAllProducts": "Tüm ürünleri göster",
         "showingResults": "{count} ürün bulundu"
+    },
+    "feedback": {
+        "title": "Geri Bildirim",
+        "selectLanguage": "Dil Seçin",
+        "selectLanguageDescription": "Devam etmek için lütfen tercih ettiğiniz dili seçin",
+        "questions": {
+            "q1": "Kullandığınız parfümün kodu nedir?",
+            "q2": "Kendiniz için bir daha satın alır mısınız? veya başkasına önerir misiniz?",
+            "q3": "Ödediğiniz fiyat karşılığı ürünün kalitesi uygun gördünüz mü?",
+            "q4": "Şişe ve paketlemeyi puanlayınız",
+            "q5": "Kokunun yayılmasını puanlayınız",
+            "q6": "Parfümün kokusunu puanlayınız",
+            "q7": "Kalıcılığı ne kadar sürüyor?",
+            "q8": "Kullandığınız parfümün boyutu nedir?",
+            "q9": "Düşünceleriniz bizim için önemlidir! Her türlü yorum ve önerinizi bizimle paylaşabilirsiniz"
+        },
+        "answers": {
+            "definitely": "Tabii ki",
+            "maybe": "Belki",
+            "no": "Hayır",
+            "yes": "Evet",
+            "other": "Diğer",
+            "size100ml": "100 ml",
+            "size50ml": "50 ml",
+            "size50mlB": "50 ml (B quality)",
+            "sizeSmall": "3/6/10 ml"
+        },
+        "form": {
+            "name": "Adınız (zorunlu değil)",
+            "namePlaceholder": "İsminizi girin",
+            "perfumeCode": "Parfüm Kodu",
+            "perfumeCodePlaceholder": "Parfüm kodunu girin",
+            "submit": "Geri Bildirim Gönder",
+            "submitting": "Gönderiliyor...",
+            "success": "Geri bildiriminiz için teşekkürler!",
+            "successMessage": "Geri bildiriminiz başarıyla gönderildi.",
+            "error": "Geri bildirim gönderilirken hata",
+            "errorMessage": "Lütfen daha sonra tekrar deneyin.",
+            "required": "Zorunlu",
+            "rating": "Puanlama",
+            "longevityPlaceholder": "Parfümün kalıcılığı ne kadar sürüyor?"
+        }
     }
 }
